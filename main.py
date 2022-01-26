@@ -33,10 +33,12 @@ def sinput(xlist, seznam, pocet, sloupek):
         s = ltos(seznam[i])
         xlist.write(radek+i, sloupek, s)
         xlist.write(radek+i, sloupek+1, pocet[i])
-
-cisla = [[[],[]] for _ in range(49)]
+        
+        
+pocet_tydnu = int(input("Počet týdnů : "))
+cisla = [[[],[]] for _ in range(pocet_tydnu)]
 ind = 0
-while True:
+for _ in range(pocet_tydnu):
     a = input("input :")
     if a == "0":
         break
@@ -44,6 +46,8 @@ while True:
         cisla[ind][0] = a.split("\t")[:5]
         cisla[ind][1] = a.split("\t")[5:]
         ind += 1
+        
+        
 for i in range(len(cisla)):
     for v in range(len(cisla[i])):
         for c in range(len(cisla[i][v])):
